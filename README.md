@@ -10,5 +10,5 @@
 
 
 to load the "run_analysis.R" script type
-
 ``` source("run_analysis.R") ```
+in the R console or in an R source editor
