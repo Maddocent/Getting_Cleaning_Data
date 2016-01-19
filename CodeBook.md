@@ -1,6 +1,6 @@
-## CodeBook, belonging to "run_alaysis.R" in this repository
+## CodeBook, belonging to "run_analysis.R" in this repository
 
-## The Data
+## The data
 
 ## The variables
 
