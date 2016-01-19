@@ -11,4 +11,4 @@
 
 to load the "run_analysis.R" script type
 
-``` source("run_analysis.R" ```
+```r source("run_analysis.R") ```
