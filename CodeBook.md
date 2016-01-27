@@ -2,7 +2,7 @@
 
 The R script: run_analysis.R will tidy the UCI data set described below. When downloading the script to your working directory you can source the script by typing 
 
-```source("run_analysis.R")``  in the R console or R editor (e.g. RStudio).
+```source("run_analysis.R")```  in the R console or R editor (e.g. RStudio).
 
 This will result in the downloadinf the dataset, the cleaning-up of the dataset ("UCI_data/selected_data.txt" and generates a summary (UCI_data/tidy_data.txt" files.
 
