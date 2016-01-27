@@ -1,14 +1,5 @@
 ## CodeBook, belonging to "run_analysis.R" in this repository
 
-Source:
-
-Jorge L. Reyes-Ortiz(1,2), Davide Anguita(1), Alessandro Ghio(1), Luca Oneto(1) and Xavier Parra(2)
-1 - Smartlab - Non-Linear Complex Systems Laboratory
-DITEN - Università degli Studi di Genova, Genoa (I-16145), Italy.
-2 - CETpD - Technical Research Centre for Dependency Care and Autonomous Living
-Universitat Politècnica de Catalunya (BarcelonaTech). Vilanova i la Geltrú (08800), Spain
-activityrecognition '@' smartlab.ws
-
 ## Data Set Information:
 
 The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data.
@@ -61,16 +52,18 @@ A complete list of variables can be found in the two file:
 
 ## The "run_analysis.R" script:
 
-STEP 1: Installing packages used in this script: This step installs all the nessecary packages for the script to be able to execute all the written functions on the data.
+STEP 1 - Installing packages used in this script: This step installs all the nessecary packages for the script to be able to execute all the written functions on the data.
 The packages:
 "curl" is needed for downloading the data, 
 "dplyr" and "tidyr" to select appropriate variables, change the vraiable names, merge the diffrent data files to one and perform the 'group_by' summary statistics
 
-STEP 2: Getting the Data: Download the dataset (zip file) to a directory "data" in your current working directory. If the folder data does not exist the script will automatically create this directory.
+STEP 2 - Getting the Data: Download the dataset (zip file) to a directory "data" in your current working directory. If the folder data does not exist the script will automatically create this directory.
 
-STEP 3: Merging the the training and the test sets to create one data set: combines the data from the subjects, the activities and the variables (features) of the "train" dataset with the subjects, activities and features of the "test" dataset.
+STEP 3 - Merging the the training and the test sets to create one data set: combines the data from the subjects, the activities and the variables (features) of the "train" dataset with the subjects, activities and features of the "test" dataset.
 
-STEP 4: Extracting only the measurements with mean and standard deviation: From the 563 variables in the merged dataset, only the variables containing the words "mean" and "std" are selected. The variables "subject" and activity are alse both retained. 
+STEP 4 - Extracting only the measurements with mean and standard deviation: From the 563 variables in the merged dataset, only the variables containing the words "mean" and "std" are selected. The variables "subject" and activity are alse both retained. The "selected_data" data frame will contain 68 variables. 
+
+STEP 5 - Applying descriptive activity names to name the activities in the data set: This will change the names of the feature variables to more descriptive names. The names will all be lower capitals, conform the tidy dat principle. 
 
 
 
@@ -78,4 +71,13 @@ STEP 4: Extracting only the measurements with mean and standard deviation: From 
 
 
 ## Other concerns and information
+The script has been written with information from the Coursera Course 3: "Getting and Clenaing Data". Tutorials and execises were particularly helpful. Part of the code was adapted from 
+
+### Adapted from Source:
+Jorge L. Reyes-Ortiz(1,2), Davide Anguita(1), Alessandro Ghio(1), Luca Oneto(1) and Xavier Parra(2)
+1 - Smartlab - Non-Linear Complex Systems Laboratory
+DITEN - Università degli Studi di Genova, Genoa (I-16145), Italy.
+2 - CETpD - Technical Research Centre for Dependency Care and Autonomous Living
+Universitat Politècnica de Catalunya (BarcelonaTech). Vilanova i la Geltrú (08800), Spain
+activityrecognition '@' smartlab.ws
 
