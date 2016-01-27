@@ -40,9 +40,6 @@ Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ort
 
 Jorge Luis Reyes-Ortiz, Alessandro Ghio, Xavier Parra-Llanas, Davide Anguita, Joan Cabestany, Andreu Català. Human Activity and Motion Disorder Recognition: Towards Smarter Interactive Cognitive Environments. 21th European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning, ESANN 2013. Bruges, Belgium 24-26 April 2013.
 
-
-Citation:
-
 Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. A Public Domain Dataset for Human Activity Recognition Using Smartphones. 21th European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning, ESANN 2013. Bruges, Belgium 24-26 April 2013. 
 
 ## The data
@@ -59,10 +56,22 @@ A complete list of variables can be found in the two file:
 ## Transformations to the data
 - No data transformations will be performed by the R-script "run_analysis.R"
 - The names of the variables will be changed to more human readable names
-- The activity labels (1:6) will be converted to 6 'activity indicators'
+- The activity labels (1:6) will be converted to 6 'activity indicators', being 
 - The cleaned op data frame will be written as a 
 
-## The "run_analysis.R" script
+## The "run_analysis.R" script:
+
+STEP 1: Installing packages used in this script: This step installs all the nessecary packages for the script to be able to execute all the written functions on the data.
+The packages:
+"curl" is needed for downloading the data, 
+"dplyr" and "tidyr" to select appropriate variables, change the vraiable names, merge the diffrent data files to one and perform the 'group_by' summary statistics
+
+STEP 2: Getting the Data: Download the dataset (zip file) to a directory "data" in your current working directory. If the folder data does not exist the script will automatically create this directory.
+
+STEP 3: Merging the the training and the test sets to create one data set: combines the data from the subjects, the activities and the variables (features) of the "train" dataset with the subjects, activities and features of the "test" dataset.
+
+STEP 4: Extracting only the measurements with mean and standard deviation: From the 563 variables in the merged dataset, only the variables containing the words "mean" and "std" are selected. The variables "subject" and activity are alse both retained. 
+
 
 
 ## The experiment
