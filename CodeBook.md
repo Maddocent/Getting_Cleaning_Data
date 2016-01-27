@@ -77,7 +77,7 @@ the activity labels can be found by typing:
 ` as.factor(selected_data) `
 ` levels(selected_data$activities) `
 
-## The "run_analysis.R" script: Consists of six steps explained below:
+## The "run_analysis.R" script: Consists of eight steps explained below:
 
 STEP 1 - Installing packages used in this script: This step installs all the nessecary packages for the script to be able to execute all the written functions on the data.
 The packages:
@@ -104,6 +104,13 @@ STEP 7 - From the "selected_data" frame, a second,
 independent tidy data frame is created with the mean of each variable for each activity and each subject.
 To view the tidy set
 ` print(tidy_data) `
+
+STEP 8 - Cleaning the Glabal Environment
+To get rid of the excess objects in the global envrionment the script closes off with:
+` keep(selected_data, tidy_data, activities, sure = TRUE) `
+which keeps only the data frames "selected_data", "activities" and "tidy_data"
+
+
 
 ## Other concerns and information
 The script has been written with information from the Coursera Course 3: "Getting and Clenaing Data". Tutorials and execises were particularly helpful. Part of the R code was adapted from https://github.com/sudar/UCI-HAR-Dataset-Analysis. 
