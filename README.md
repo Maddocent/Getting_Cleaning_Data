@@ -11,14 +11,18 @@
 
 ## The R script "run_analysis.R"
 
-to load the "run_analysis.R" script, download the file "run_analysis.R" to your working dir., open a new script and type
+to load the "run_analysis.R" script, download the repo files as a zip file. Unzip the individual files to your working dir, open a new R script and type:
 
 ``` source("run_analysis.R") ```
+be sure the "run_analysis.R" file is directly in your working directory
 
-in the R console or in an R source editor. Running this one line should execute the script and do the cleaning and summary of the data for you.
+Running this one line should execute the script and do the cleaning and summary of the data for you.
 
 The dataset files will be in a newly created folder in your working dir. called "UCI HAR Dataset", the tidied datasets: both with selected variables and the summary wil be in the folder called "UCI data". 
 
 ## Output
-
 The output files will be called "selected_data.txt" for the file with the preselected variables from the original set. The summary file will be called "tidy_data.txt"
+
+For more details on the script and the dataset consult the "CodeBook.md" file in this repo.
+
+Happy R'ing!
