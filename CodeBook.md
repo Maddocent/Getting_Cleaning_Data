@@ -1,8 +1,30 @@
 ## CodeBook, belonging to "run_analysis.R" in this repository
 
-## Data Set Information:
+The R script: run_analysis.R will tidy the UCI data set described below. When downloading the script to your working directory you can source the script by typing 
+
+```source("run_analysis.R")``  in the R console or R editor (e.g. RStudio).
+
+This will result in the downloadinf the dataset, the cleaning-up of the dataset ("UCI_data/selected_data.txt" and generates a summary (UCI_data/tidy_data.txt" files.
+
+To load the generated "selected_data.txt" and "tidy_data.txt" into R type:
+
+run if you do not have dplyr installed:
+```install.packages("dplyr")```
+
+load the dplyr package:
+```library(dplyr)
+
+load the "selected_data.txt." file
+```selected_data <- tbl_df(read.table(file = "./UCI_data/selected_data.txt", row.names = NULL, header = TRUE))```
+```print(data)```
+
+load the "tidy_data.txt" file
+```tidy_data <- tbl_df(read.table(file = "./UCI_data/tidy_data.txt", row.names = NULL, header = TRUE))```
+```print(tidy_data)```
 
 
+## The experiment
+As reference in the Readme.md file in this repository:
 The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data.
 
 The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain.
@@ -44,11 +66,23 @@ http://archive.ics.uci.edu/ml/machine-learning-databases/00240/UCI%20HAR%20Datas
 A complete list of variables can be found in the two file:
 - features.txt 
 - features_info.txt
+- 
+The list of variables in the "selected_data" set can be found by typing
+
+```names(slected_data)``` 
+
+after sourcing the script.
 
 ## Transformations to the data
 - No data transformations will be performed by the R-script "run_analysis.R"
 - The names of the variables will be changed to more human readable names
-- The activity labels (1:6) will be converted to 6 'activity indicators', being 
+- The activity labels (1:6) will be converted to 6 'activity indicators'
+
+the activity labels can be found by typing
+
+```
+
+
 - The cleaned op data frame will be written as a 
 
 ## The "run_analysis.R" script:
@@ -68,11 +102,10 @@ STEP 5 - Applying descriptive activity names to name the activities in the data 
 
 
 
-## The experiment
 
 
 ## Other concerns and information
-The script has been written with information from the Coursera Course 3: "Getting and Clenaing Data". Tutorials and execises were particularly helpful. Part of the code was adapted from https://github.com/Maddocent/UCI-HAR-Dataset-Analysis
+The script has been written with information from the Coursera Course 3: "Getting and Clenaing Data". Tutorials and execises were particularly helpful. Part of the R code was adapted from https://github.com/sudar/UCI-HAR-Dataset-Analysis. 
 
 ### Adapted from Source:
 Jorge L. Reyes-Ortiz(1,2), Davide Anguita(1), Alessandro Ghio(1), Luca Oneto(1) and Xavier Parra(2)
