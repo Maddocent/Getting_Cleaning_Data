@@ -14,7 +14,7 @@ run if you do not have dplyr installed:
 
 load the dplyr package:
 
-```library(dplyr)
+```library(dplyr)```
 
 load the "selected_data.txt." file
 
@@ -72,26 +72,24 @@ http://archive.ics.uci.edu/ml/machine-learning-databases/00240/UCI%20HAR%20Datas
 A complete list of variables can be found in the two file:
 - features.txt 
 - features_info.txt
-- 
-The list of variables in the "selected_data" set can be found by typing
+ 
+The variables in the "selected_data" file can be found by typing
 
-```names(slected_data)``` 
-
-after sourcing the script.
+```names(selected_data)``` 
 
 ## Transformations to the data
-- No data transformations will be performed by the R-script "run_analysis.R"
+- No data transformations will be performed by the R script "run_analysis.R"
 - The names of the variables will be changed to more human readable names
 - The activity labels (1:6) will be converted to 6 'activity indicators'
 
 the activity labels can be found by typing
 
-```
+```as.factor(selected_data)```
+```levels(selected_data$activities)```
 
+- The cleaned op data frame will be written as "selected_data.txt" to the folder "UCI_data" in your working directory.
 
-- The cleaned op data frame will be written as a 
-
-## The "run_analysis.R" script:
+## The "run_analysis.R" script: Consists of six steps explaing below:
 
 STEP 1 - Installing packages used in this script: This step installs all the nessecary packages for the script to be able to execute all the written functions on the data.
 The packages:
@@ -104,7 +102,24 @@ STEP 3 - Merging the the training and the test sets to create one data set: comb
 
 STEP 4 - Extracting only the measurements with mean and standard deviation: From the 563 variables in the merged dataset, only the variables containing the words "mean" and "std" are selected. The variables "subject" and activity are alse both retained. The "selected_data" data frame will contain 68 variables. 
 
-STEP 5 - Applying descriptive activity names to name the activities in the data set: This will change the names of the feature variables to more descriptive names. The names will all be lower capitals, conform the tidy dat principle. 
+STEP 5 - Applying descriptive activity names to name the activities in the data set: This will change the labels of the activities variable (factor) to the activities: . The names will all be lower capitals, conform the tidy dat principle. 
+
+to view the original labels and the new labels type:
+
+```View(activities)```
+
+STEP 6 - Appropriately labelling of the "selected_data" frame with descriptive variable names.
+
+to see the names of the selected variables type:
+
+```names(selected_data)```
+
+STEP 7 - From the "selected_data" frame, a second, 
+independent tidy data frame is created with the mean of each variable for each activity and each subject.
+To view the tidy set
+
+```print(tidy_data)```
+
 
 
 
