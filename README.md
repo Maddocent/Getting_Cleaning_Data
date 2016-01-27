@@ -21,4 +21,4 @@ The dataset files will be in a newly created folder in your working dir. called 
 
 ## Output
 
-The files will be called "selected_data.txt" for the file with the preselected variables from the original set. The summary file will be called "tidy_data.txt"
+The output files will be called "selected_data.txt" for the file with the preselected variables from the original set. The summary file will be called "tidy_data.txt"
