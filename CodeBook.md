@@ -1,4 +1,5 @@
 ## CodeBook, belonging to "run_analysis.R" in this repository
+### Author: Dr. Marc A.T. Teunis, Utrecht, January 2016 
 
 The R script: run_analysis.R will tidy the UCI data set described below. When downloading the script to 
 your working directory you can source the script by typing 
@@ -9,20 +10,21 @@ in the R console or R editor (e.g. RStudio).
 
 This will result in the download of the dataset, the cleaning-up of the dataset ("UCI_data/selected_data.txt") and generates a summary (UCI_data/tidy_data.txt" files).
 
-To load the generated "selected_data.txt" and "tidy_data.txt": 
-
+To load the generated "selected_data.txt" and "tidy_data.txt" data files: 
 load the "selected_data.txt" file:
+
 ` selected_data <- tbl_df(read.table(file = "./UCI_data/selected_data.txt", row.names = NULL, header = TRUE)) `
 
-To view the selected_data table
+To view the "selected_data" table
 ` print(selected_data) `
 ` View(selected_data) `
 
-load the "tidy_data.txt" file
-
+load the "tidy_data.txt" file:
 ` tidy_data <- tbl_df(read.table(file = "./UCI_data/tidy_data.txt", row.names = NULL, header = TRUE)) `
 
+To view the "tidy_data" table
 ` print(tidy_data) `
+`View(tidy_data) `
 
 ## The experiment
 As reference in the Readme.md file in this repository:
@@ -37,7 +39,6 @@ A video of the experiment including an example of the 6 recorded activities with
 An updated version of this dataset can be found at [Web Link]. It includes labels of postural transitions between activities and also the full raw inertial signals instead of the ones pre-processed into windows.
 
 ## Attribute Information:
-
 For each record in the dataset it is provided:
 - Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
 - Triaxial Angular velocity from the gyroscope.
@@ -46,7 +47,6 @@ For each record in the dataset it is provided:
 - An identifier of the subject who carried out the experiment.
 
 ## Relevant Papers:
-
 Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
 
 Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra, Jorge L. Reyes-Ortiz. Energy Efficient Smartphone-Based Activity Recognition using Fixed-Point Arithmetic. Journal of Universal Computer Science. Special Issue in Ambient Assisted Living: Home Care. Volume 19, Issue 9. May 2013
@@ -58,18 +58,15 @@ Jorge Luis Reyes-Ortiz, Alessandro Ghio, Xavier Parra-Llanas, Davide Anguita, Jo
 Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. A Public Domain Dataset for Human Activity Recognition Using Smartphones. 21th European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning, ESANN 2013. Bruges, Belgium 24-26 April 2013. 
 
 ## The data
-
 The complete dataset can be downloaded here:
 http://archive.ics.uci.edu/ml/machine-learning-databases/00240/UCI%20HAR%20Dataset.zip
 
 ## The variables
-
 A complete list of variables can be found in the two file:
 - features.txt 
 - features_info.txt
  
-The variables in the "selected_data" file can be found by typing
-
+The variables in the "selected_data" file can be found by typing:
 ` names(selected_data) ` 
 
 ## Transformations to the data
@@ -77,15 +74,11 @@ The variables in the "selected_data" file can be found by typing
 - The names of the variables will be changed to more human readable names
 - The activity labels (1:6) will be converted to 6 'activity indicators'
 
-the activity labels can be found by typing
-
+the activity labels can be found by typing:
 ` as.factor(selected_data) `
-
 ` levels(selected_data$activities) `
 
-- The cleaned op data frame will be written as "selected_data.txt" to the folder "UCI_data" in your working directory.
-
-## The "run_analysis.R" script: Consists of six steps explaing below:
+## The "run_analysis.R" script: Consists of six steps explained below:
 
 STEP 1 - Installing packages used in this script: This step installs all the nessecary packages for the script to be able to execute all the written functions on the data.
 The packages:
@@ -101,25 +94,22 @@ STEP 4 - Extracting only the measurements with mean and standard deviation: From
 STEP 5 - Applying descriptive activity names to name the activities in the data set: This will change the labels of the activities variable (factor) to the activities: . The names will all be lower capitals, conform the tidy dat principle. 
 
 to view the original labels and the new labels type:
-
 ` View(activities) `
 
 STEP 6 - Appropriately labelling of the "selected_data" frame with descriptive variable names.
 
 to see the names of the selected variables type:
-
 ` names(selected_data) `
 
 STEP 7 - From the "selected_data" frame, a second, 
 independent tidy data frame is created with the mean of each variable for each activity and each subject.
 To view the tidy set
-
 ` print(tidy_data) `
 
 ## Other concerns and information
 The script has been written with information from the Coursera Course 3: "Getting and Clenaing Data". Tutorials and execises were particularly helpful. Part of the R code was adapted from https://github.com/sudar/UCI-HAR-Dataset-Analysis. 
 
-### Adapted from Source:
+## Adapted from Source:
 Jorge L. Reyes-Ortiz(1,2), Davide Anguita(1), Alessandro Ghio(1), Luca Oneto(1) and Xavier Parra(2)
 1 - Smartlab - Non-Linear Complex Systems Laboratory
 DITEN - Università degli Studi di Genova, Genoa (I-16145), Italy.
