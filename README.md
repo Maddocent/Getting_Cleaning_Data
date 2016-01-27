@@ -25,4 +25,3 @@ The output files will be called "selected_data.txt" for the file with the presel
 
 For more details on the script and the dataset consult the "CodeBook.md" file in this repo.
 
-Happy R'ing!
