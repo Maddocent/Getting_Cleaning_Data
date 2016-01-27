@@ -1,14 +1,13 @@
 ## CodeBook, belonging to "run_analysis.R" in this repository
 ### Author: Dr. Marc A.T. Teunis, Utrecht, January 2016 
 
-The R script: run_analysis.R will tidy the UCI data set described below. When downloading the script to 
+The R script: "run_analysis.R" will clean and tidy the UCI data set described below. When downloading the script to 
 your working directory you can source the script by typing 
 
 ` source("run_analysis.R") `  
+Run this one line of code to execute the sourced script in the R console or R editor (e.g. RStudio).
 
-in the R console or R editor (e.g. RStudio).
-
-This will result in the download of the dataset, the cleaning-up of the dataset ("UCI_data/selected_data.txt") and generates a summary (UCI_data/tidy_data.txt" files).
+This will result in the installation of neccessary packages (if not already installed), the loading  of the packages and the download of the dataset, and the cleaning-up of the dataset ("UCI_data/selected_data.txt"). The script finally generates a summary of the "selected_data" frame (UCI_data/tidy_data.txt").
 
 To load the generated "selected_data.txt" and "tidy_data.txt" data files: 
 load the "selected_data.txt" file:
